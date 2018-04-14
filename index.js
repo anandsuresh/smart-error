@@ -103,7 +103,7 @@ function create (name, errors) {
    * @returns {Object}
    */
   SmartError.prototype.toJSON = function (key) {
-    const {code, metadata, cause} = this._props
+    const {code, metadata, cause, stack} = this._props
     const result = {name, code}
 
     if (metadata != null) {
@@ -124,6 +124,7 @@ function create (name, errors) {
       }
     }
 
+    result.stack = stack
     return result
   }
 
