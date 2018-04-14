@@ -39,6 +39,7 @@ function create (name, errors) {
    * @param {String} code A unique error code
    * @param {*} [metadata] Optional metadata for the error
    * @param {Error} [cause] Optional error that was originally thrown
+   * @param {Function} [stackFrame] Optional function used to identify the head of the stack trace
    */
   function SmartError (code, metadata, cause, stackFrame = SmartError) {
     if (metadata instanceof Error) {
